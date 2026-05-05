@@ -1,0 +1,12 @@
+{
+  "name": "syncer-test",
+  "version": "1.0.0",
+  "description": "这是一个 JSON 格式的测试文件",
+  "features": [
+    "文件监控",
+    "AES-256-GCM 加密",
+    "S3 同步",
+    "并发上传"
+  ],
+  "timestamp": 1717950466
+}

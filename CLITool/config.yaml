@@ -1,0 +1,59 @@
+# 配置文件示例
+# 请根据实际情况修改以下配置项
+
+# 文件监控配置
+watch:
+  # 要监控的目录路径（可以是相对路径或绝对路径）
+  path: ./data
+  # 是否递归监控子目录
+  recursive: true
+
+# AWS S3 配置
+s3:
+  # S3 存储桶名称（必须修改为您实际的 bucket 名称）
+  bucket: your-bucket-name
+  # 上传到 S3 的键前缀（可选，默认为 backup/）
+  prefix: backup/
+  # AWS 区域（可选，如果不指定将使用默认凭证链）
+  region: us-east-1
+
+# 加密配置
+encryption:
+  # 用于派生加密密钥的密码
+  # 注意：请使用强密码，并妥善保管
+  password: your-strong-encryption-password-123!
+
+# 同步行为配置
+sync:
+  # 并发上传的最大数量
+  # 对于大文件，这是同时上传的 part 数量
+  concurrency: 5
+  # 文件事件的防抖时间（毫秒）
+  # 防止文件短时间多次修改导致频繁上传
+  debounce_ms: 1000
+  # 失败操作的最大重试次数
+  # 每个 part 独立重试
+  retry_attempts: 3
+  # 重试的初始延迟（毫秒），使用指数退避
+  retry_delay_ms: 1000
+
+  # ============================================
+  # Multipart Upload 配置（大文件优化）
+  # ============================================
+  # 触发 Multipart Upload 的文件大小阈值（字节）
+  # 文件大于此值将使用 Multipart Upload
+  # 默认: 100MB (104857600 字节)
+  # multipart_threshold_bytes: 104857600
+  sync:
+  multipart_threshold_bytes: 1024  # 1KB，小文件也会触发 Multipart
+
+  # Multipart Upload 的分块大小（字节）
+  # 最小值: 5MB (5242880 字节)
+  # 最大值: 5GB
+  # 默认: 5MB (5242880 字节)
+  part_size_bytes: 5242880
+
+  # 是否启用动态分块大小调整
+  # 启用后，对于超大文件（超过 50GB = 10000 parts × 5MB），
+  # 会自动增加 part_size 以避免超出 10000 parts 的限制
+  dynamic_part_size: true

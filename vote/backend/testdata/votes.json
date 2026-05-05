@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "work_id": 1,
+    "ip": "192.168.1.101",
+    "device_id": "device_001_abc123",
+    "nickname": "张小明",
+    "is_assisted": false,
+    "share_link_id": "",
+    "created_at": "2024-04-01T10:30:00Z",
+    "updated_at": "2024-04-01T10:30:00Z"
+  },
+  {
+    "id": 2,
+    "work_id": 1,
+    "ip": "192.168.1.102",
+    "device_id": "device_002_def456",
+    "nickname": "李华",
+    "is_assisted": false,
+    "share_link_id": "share_12345",
+    "created_at": "2024-04-01T11:15:00Z",
+    "updated_at": "2024-04-01T11:15:00Z"
+  },
+  {
+    "id": 3,
+    "work_id": 2,
+    "ip": "192.168.1.103",
+    "device_id": "device_003_ghi789",
+    "nickname": "王芳",
+    "is_assisted": false,
+    "share_link_id": "",
+    "created_at": "2024-04-02T09:20:00Z",
+    "updated_at": "2024-04-02T09:20:00Z"
+  },
+  {
+    "id": 4,
+    "work_id": 1,
+    "ip": "192.168.1.104",
+    "device_id": "device_004_jkl012",
+    "nickname": "陈伟",
+    "is_assisted": true,
+    "share_link_id": "share_67890",
+    "created_at": "2024-04-02T14:45:00Z",
+    "updated_at": "2024-04-02T14:45:00Z"
+  },
+  {
+    "id": 5,
+    "work_id": 3,
+    "ip": "192.168.1.105",
+    "device_id": "device_005_mno345",
+    "nickname": "刘洋",
+    "is_assisted": false,
+    "share_link_id": "",
+    "created_at": "2024-04-03T08:30:00Z",
+    "updated_at": "2024-04-03T08:30:00Z"
+  },
+  {
+    "id": 6,
+    "work_id": 2,
+    "ip": "192.168.1.106",
+    "device_id": "device_006_pqr678",
+    "nickname": "赵雪",
+    "is_assisted": false,
+    "share_link_id": "",
+    "created_at": "2024-04-03T12:15:00Z",
+    "updated_at": "2024-04-03T12:15:00Z"
+  },
+  {
+    "id": 7,
+    "work_id": 1,
+    "ip": "192.168.1.107",
+    "device_id": "device_007_stu901",
+    "nickname": "孙强",
+    "is_assisted": false,
+    "share_link_id": "",
+    "created_at": "2024-04-04T10:00:00Z",
+    "updated_at": "2024-04-04T10:00:00Z"
+  },
+  {
+    "id": 8,
+    "work_id": 4,
+    "ip": "192.168.1.108",
+    "device_id": "device_008_vwx234",
+    "nickname": "周婷",
+    "is_assisted": false,
+    "share_link_id": "",
+    "created_at": "2024-04-04T15:30:00Z",
+    "updated_at": "2024-04-04T15:30:00Z"
+  },
+  {
+    "id": 9,
+    "work_id": 3,
+    "ip": "192.168.1.109",
+    "device_id": "device_009_yzx567",
+    "nickname": "吴鹏",
+    "is_assisted": true,
+    "share_link_id": "share_11111",
+    "created_at": "2024-04-05T09:45:00Z",
+    "updated_at": "2024-04-05T09:45:00Z"
+  },
+  {
+    "id": 10,
+    "work_id": 1,
+    "ip": "192.168.1.110",
+    "device_id": "device_010_abc890",
+    "nickname": "郑丽",
+    "is_assisted": false,
+    "share_link_id": "",
+    "created_at": "2024-04-05T11:20:00Z",
+    "updated_at": "2024-04-05T11:20:00Z"
+  },
+  {
+    "id": 11,
+    "work_id": 5,
+    "ip": "192.168.1.111",
+    "device_id": "device_011_def123",
+    "nickname": "钱敏",
+    "is_assisted": false,
+    "share_link_id": "",
+    "created_at": "2024-04-06T08:15:00Z",
+    "updated_at": "2024-04-06T08:15:00Z"
+  },
+  {
+    "id": 12,
+    "work_id": 2,
+    "ip": "192.168.1.112",
+    "device_id": "device_012_ghi456",
+    "nickname": "冯涛",
+    "is_assisted": false,
+    "share_link_id": "",
+    "created_at": "2024-04-06T13:40:00Z",
+    "updated_at": "2024-04-06T13:40:00Z"
+  },
+  {
+    "id": 13,
+    "work_id": 1,
+    "ip": "192.168.1.113",
+    "device_id": "device_013_jkl789",
+    "nickname": "韩雪",
+    "is_assisted": false,
+    "share_link_id": "",
+    "created_at": "2024-04-07T10:25:00Z",
+    "updated_at": "2024-04-07T10:25:00Z"
+  },
+  {
+    "id": 14,
+    "work_id": 6,
+    "ip": "192.168.1.114",
+    "device_id": "device_014_mno012",
+    "nickname": "唐磊",
+    "is_assisted": false,
+    "share_link_id": "",
+    "created_at": "2024-04-07T16:00:00Z",
+    "updated_at": "2024-04-07T16:00:00Z"
+  },
+  {
+    "id": 15,
+    "work_id": 3,
+    "ip": "192.168.1.115",
+    "device_id": "device_015_pqr345",
+    "nickname": "许萌",
+    "is_assisted": true,
+    "share_link_id": "share_22222",
+    "created_at": "2024-04-08T09:10:00Z",
+    "updated_at": "2024-04-08T09:10:00Z"
+  }
+]

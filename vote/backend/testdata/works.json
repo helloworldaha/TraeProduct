@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "2024年度最佳科技创新作品 - 智能助手AI",
+    "description": "基于深度学习的智能助手系统，能够理解复杂的自然语言指令，提供智能的日程管理、知识问答等功能。",
+    "image_url": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20AI%20robot%20assistant%20technology%20background&image_size=square_hd",
+    "video_url": "",
+    "vote_count": 1523,
+    "is_hot": true,
+    "is_recommend": true,
+    "created_at": "2024-01-15T10:30:00Z",
+    "updated_at": "2024-05-01T08:20:00Z"
+  },
+  {
+    "id": 2,
+    "title": "智能家居控制系统",
+    "description": "全自动化智能家居解决方案，支持语音控制、场景模式、能源管理等功能。",
+    "image_url": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=smart%20home%20control%20system%20modern%20interior&image_size=square_hd",
+    "video_url": "",
+    "vote_count": 1245,
+    "is_hot": true,
+    "is_recommend": false,
+    "created_at": "2024-02-20T14:15:00Z",
+    "updated_at": "2024-05-01T09:10:00Z"
+  },
+  {
+    "id": 3,
+    "title": "环保监测物联网平台",
+    "description": "实时环境监测系统，监测空气质量、水质、噪音等环境参数，提供数据分析和预警功能。",
+    "image_url": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=environmental%20monitoring%20IoT%20platform%20green%20technology&image_size=square_hd",
+    "video_url": "",
+    "vote_count": 987,
+    "is_hot": false,
+    "is_recommend": true,
+    "created_at": "2024-03-10T09:45:00Z",
+    "updated_at": "2024-04-30T16:30:00Z"
+  },
+  {
+    "id": 4,
+    "title": "在线教育互动平台",
+    "description": "沉浸式在线学习体验，支持实时互动、白板共享、在线测验等功能。",
+    "image_url": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=online%20education%20platform%20students%20learning&image_size=square_hd",
+    "video_url": "",
+    "vote_count": 876,
+    "is_hot": false,
+    "is_recommend": false,
+    "created_at": "2024-01-25T11:20:00Z",
+    "updated_at": "2024-04-28T14:00:00Z"
+  },
+  {
+    "id": 5,
+    "title": "健康管理移动应用",
+    "description": "个人健康数据追踪应用，记录运动、睡眠、饮食等健康数据，提供个性化健康建议。",
+    "image_url": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=health%20management%20mobile%20app%20fitness%20tracking&image_size=square_hd",
+    "video_url": "",
+    "vote_count": 765,
+    "is_hot": false,
+    "is_recommend": true,
+    "created_at": "2024-02-05T16:30:00Z",
+    "updated_at": "2024-04-25T10:45:00Z"
+  },
+  {
+    "id": 6,
+    "title": "企业协作办公系统",
+    "description": "高效的团队协作平台，集成项目管理、文档协作、即时通讯等功能。",
+    "image_url": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=enterprise%20collaboration%20office%20system%20teamwork&image_size=square_hd",
+    "video_url": "",
+    "vote_count": 654,
+    "is_hot": false,
+    "is_recommend": false,
+    "created_at": "2024-03-15T13:00:00Z",
+    "updated_at": "2024-04-20T11:30:00Z"
+  },
+  {
+    "id": 7,
+    "title": "电商数据分析平台",
+    "description": "全方位电商业务数据分析工具，提供销售趋势、用户行为、商品分析等报表。",
+    "image_url": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=ecommerce%20data%20analytics%20platform%20dashboard&image_size=square_hd",
+    "video_url": "",
+    "vote_count": 543,
+    "is_hot": false,
+    "is_recommend": false,
+    "created_at": "2024-04-01T09:15:00Z",
+    "updated_at": "2024-04-22T15:20:00Z"
+  },
+  {
+    "id": 8,
+    "title": "区块链溯源系统",
+    "description": "基于区块链技术的商品溯源系统，确保供应链透明度和产品真实性。",
+    "image_url": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=blockchain%20traceability%20system%20supply%20chain&image_size=square_hd",
+    "video_url": "",
+    "vote_count": 432,
+    "is_hot": false,
+    "is_recommend": false,
+    "created_at": "2024-04-10T14:30:00Z",
+    "updated_at": "2024-04-28T09:00:00Z"
+  },
+  {
+    "id": 9,
+    "title": "AR增强现实游戏",
+    "description": "将虚拟与现实结合的AR游戏，带来全新的游戏体验。",
+    "image_url": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=augmented%20reality%20AR%20game%20technology&image_size=square_hd",
+    "video_url": "",
+    "vote_count": 321,
+    "is_hot": false,
+    "is_recommend": false,
+    "created_at": "2024-04-15T11:45:00Z",
+    "updated_at": "2024-04-26T13:15:00Z"
+  },
+  {
+    "id": 10,
+    "title": "语音识别智能客服系统",
+    "description": "基于语音识别技术的智能客服系统，支持多语言识别和自然语言理解。",
+    "image_url": "https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=voice%20recognition%20smart%20customer%20service&image_size=square_hd",
+    "video_url": "",
+    "vote_count": 210,
+    "is_hot": false,
+    "is_recommend": false,
+    "created_at": "2024-04-20T10:00:00Z",
+    "updated_at": "2024-04-25T16:45:00Z"
+  }
+]
