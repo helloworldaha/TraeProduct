@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幸运大转盘</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <h1 class="title">幸运大转盘</h1>
+            <p class="time">活动时间：2026.05.01 - 2026.05.31</p>
+        </div>
+        
+        <div class="remain-count">
+            <span>今日剩余抽奖次数：</span>
+            <span id="remain-count" class="count">10</span>
+            <button id="resetBtn" class="reset-btn">重置次数</button>
+        </div>
+        
+        <div class="wheel-section">
+            <div class="wheel-container">
+                <div class="pointer"></div>
+                <canvas id="wheelCanvas" width="500" height="500"></canvas>
+                <button id="startBtn" class="start-btn">开始抽奖</button>
+            </div>
+        </div>
+        
+        <div class="prizes-section">
+            <h2 class="section-title">奖品列表</h2>
+            <div class="prizes-list" id="prizesList"></div>
+        </div>
+    </div>
+    
+    <div class="modal" id="resultModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-btn" id="closeBtn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="congrats">🎉 恭喜中奖！</div>
+                <div class="prize-icon" id="prizeIcon"></div>
+                <div class="prize-name" id="prizeName"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

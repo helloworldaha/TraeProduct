@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放器</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="player">
+            <div class="cover-container">
+                <div class="cover-wrapper">
+                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=abstract%20music%20album%20cover%20art%20colorful%20gradient%20geometric%20shapes%20modern%20design&image_size=square_hd" alt="封面" class="cover" id="cover">
+                    <div class="cover-center"></div>
+                </div>
+            </div>
+
+            <div class="song-info">
+                <h2 class="song-title" id="songTitle">选择一首歌曲</h2>
+                <p class="song-artist" id="songArtist">--</p>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="time-display">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalTime">0:00</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn mode-btn" id="modeBtn" title="播放模式">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                </button>
+                <button class="control-btn prev-btn" id="prevBtn" title="上一首">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                        <line x1="5" y1="19" x2="5" y2="5"></line>
+                    </svg>
+                </button>
+                <button class="control-btn play-btn" id="playBtn" title="播放/暂停">
+                    <svg class="play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <svg class="pause-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                </button>
+                <button class="control-btn next-btn" id="nextBtn" title="下一首">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                        <line x1="19" y1="5" x2="19" y2="19"></line>
+                    </svg>
+                </button>
+                <button class="control-btn list-btn" id="listBtn" title="播放列表">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="volume-container">
+                <button class="volume-btn" id="volumeBtn">
+                    <svg class="volume-high" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"></path>
+                    </svg>
+                    <svg class="volume-low" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M15.54 8.46a5 5 0 010 7.07"></path>
+                    </svg>
+                    <svg class="volume-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="23" y1="9" x2="17" y2="15"></line>
+                        <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                </button>
+                <div class="volume-slider-container">
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
+                </div>
+                <span class="volume-percent" id="volumePercent">70%</span>
+            </div>
+
+            <div class="mode-display" id="modeDisplay">
+                <span id="modeText">顺序播放</span>
+            </div>
+        </div>
+
+        <div class="playlist-container" id="playlistContainer">
+            <div class="playlist-header">
+                <h3>播放列表</h3>
+                <span class="song-count" id="songCount">0 首</span>
+            </div>
+            <div class="playlist" id="playlist"></div>
+        </div>
+    </div>
+
+    <audio id="audio" preload="metadata"></audio>
+
+    <script src="playlist.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

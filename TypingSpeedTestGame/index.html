@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Typing Speed Test</h1>
+            <p class="subtitle">Improve your typing skills with our interactive test</p>
+            <div class="mode-badge">
+                <span id="modeDisplay">Standard Mode</span>
+                <span id="timeDisplay">60s</span>
+            </div>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-label">WPM</div>
+                <div class="stat-value" id="wpm">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">CPM</div>
+                <div class="stat-value" id="cpm">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Accuracy</div>
+                <div class="stat-value" id="accuracy">100%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Time Left</div>
+                <div class="stat-value" id="time">60</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Errors</div>
+                <div class="stat-value" id="errors">0</div>
+            </div>
+        </div>
+
+        <div class="combo-container">
+            <div class="combo-effect"></div>
+            <div class="combo-display">
+                <div class="combo-label">Combo</div>
+                <div class="combo-value" id="combo">x0</div>
+            </div>
+            <div class="max-combo-display">
+                <div class="max-combo-label">Max Combo</div>
+                <div class="max-combo-value" id="maxCombo">0</div>
+            </div>
+        </div>
+
+        <div class="text-container">
+            <div class="text-display" id="textDisplay">
+                <p id="sampleText">Click "Start Test" to begin...</p>
+            </div>
+            <textarea 
+                id="inputArea" 
+                class="input-area" 
+                placeholder="Type here..." 
+                disabled
+                autocomplete="off" 
+                autocorrect="off" 
+                autocapitalize="off" 
+                spellcheck="false"
+            ></textarea>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn" class="btn btn-primary">Start Test</button>
+            <button id="resetBtn" class="btn btn-secondary" disabled>Restart</button>
+        </div>
+
+        <div class="leaderboard-section">
+            <div class="leaderboard-header">
+                <h3 class="leaderboard-title">🏆 Leaderboard</h3>
+                <button id="clearLeaderboardBtn" class="btn-clear">Clear All</button>
+            </div>
+            <div class="leaderboard-empty" id="leaderboardEmpty">
+                <p>No records yet. Complete a test to get on the leaderboard!</p>
+            </div>
+            <div class="leaderboard-list" id="leaderboardList"></div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 class="modal-title">Test Complete!</h2>
+            <div class="modal-stats">
+                <div class="modal-stat">
+                    <div class="modal-stat-value" id="finalWpm">0</div>
+                    <div class="modal-stat-label">WPM</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value" id="finalAccuracy">100%</div>
+                    <div class="modal-stat-label">Accuracy</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value" id="finalErrors">0</div>
+                    <div class="modal-stat-label">Errors</div>
+                </div>
+                <div class="modal-stat">
+                    <div class="modal-stat-value" id="finalMaxCombo">0</div>
+                    <div class="modal-stat-label">Max Combo</div>
+                </div>
+            </div>
+            <div class="rating-container">
+                <div class="rating-label">Your Rating</div>
+                <div class="rating-value" id="rating">Beginner</div>
+            </div>
+            <button id="playAgainBtn" class="btn btn-primary modal-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="words.js"></script>
+    <script src="comboSystem.js"></script>
+    <script src="leaderboardSystem.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

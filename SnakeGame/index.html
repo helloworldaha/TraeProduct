@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇小游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🐍 贪吃蛇</h1>
+            <p class="subtitle">经典休闲小游戏</p>
+        </header>
+
+        <div class="game-info">
+            <div class="info-card">
+                <div class="info-label">当前分数</div>
+                <div class="info-value" id="currentScore">0</div>
+            </div>
+            <div class="info-card">
+                <div class="info-label">最高分</div>
+                <div class="info-value" id="highScore">0</div>
+            </div>
+            <div class="info-card">
+                <div class="info-label">等级</div>
+                <div class="info-value" id="level">1</div>
+            </div>
+            <div class="info-card">
+                <div class="info-label">游戏时长</div>
+                <div class="info-value" id="gameTime">00:00</div>
+            </div>
+            <div class="info-card">
+                <div class="info-label">已吃食物</div>
+                <div class="info-value" id="foodCount">0</div>
+            </div>
+        </div>
+
+        <div class="game-container">
+            <canvas id="gameCanvas"></canvas>
+            <div class="start-overlay" id="startOverlay">
+                <div class="start-content">
+                    <h2>🎮 准备开始</h2>
+                    <p>按任意方向键或点击按钮开始游戏</p>
+                    <button class="btn btn-primary" id="startBtn">开始游戏</button>
+                </div>
+            </div>
+            <div class="pause-overlay" id="pauseOverlay" style="display: none;">
+                <div class="pause-content">
+                    <h2>⏸️ 游戏暂停</h2>
+                    <p>按空格键或点击按钮继续</p>
+                    <button class="btn btn-primary" id="resumeBtn">继续游戏</button>
+                </div>
+            </div>
+            <div class="game-over-overlay" id="gameOverOverlay" style="display: none;">
+                <div class="game-over-content">
+                    <h2>💀 Game Over</h2>
+                    <div class="final-score">
+                        <p>最终得分: <span id="finalScore">0</span></p>
+                        <p>已吃食物: <span id="finalFoodCount">0</span></p>
+                        <p>游戏时长: <span id="finalGameTime">00:00</span></p>
+                    </div>
+                    <button class="btn btn-primary" id="restartBtn">重新开始</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-secondary" id="pauseBtn">暂停 (空格)</button>
+            <button class="btn btn-secondary" id="restartBtn2">重新开始</button>
+            <button class="btn btn-secondary" id="leaderboardBtn">🏆 排行榜</button>
+        </div>
+
+        <div class="instructions">
+            <h3>📖 游戏说明</h3>
+            <div class="instructions-grid">
+                <div class="instruction-item">
+                    <span class="key">↑ ↓ ← →</span>
+                    <span>或 WASD 控制方向</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="key">空格</span>
+                    <span>暂停/继续游戏</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="key">目标</span>
+                    <span>吃掉食物，避免碰撞</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-controls">
+            <div class="mobile-dpad">
+                <button class="dpad-btn" id="upBtn">↑</button>
+                <div class="dpad-row">
+                    <button class="dpad-btn" id="leftBtn">←</button>
+                    <button class="dpad-btn" id="downBtn">↓</button>
+                    <button class="dpad-btn" id="rightBtn">→</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="leaderboard-overlay" id="leaderboardOverlay" style="display: none;">
+            <div class="leaderboard-content">
+                <div class="leaderboard-header">
+                    <h2>🏆 历史排行榜</h2>
+                    <button class="close-btn" id="closeLeaderboardBtn">×</button>
+                </div>
+                <div class="leaderboard-actions">
+                    <button class="btn btn-danger" id="clearLeaderboardBtn">清空排行榜</button>
+                </div>
+                <div class="leaderboard-list" id="leaderboardList">
+                    <div class="empty-leaderboard">
+                        <p>暂无游戏记录</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
