@@ -1,0 +1,106 @@
+<view class="page-container">
+  <view wx:if="{{!isPlaying && dailyData}}" class="daily-info">
+    <view class="daily-banner">
+      <view class="banner-content">
+        <view class="badge">📅 今日挑战</view>
+        <view class="countdown">
+          <view class="countdown-label">距离刷新</view>
+          <view class="countdown-time">{{countdown.hours}}:{{countdown.minutes}}:{{countdown.seconds}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="stats-section">
+      <view class="stat-item">
+        <view class="stat-value">{{dailyData.highScore}}</view>
+        <view class="stat-label">今日最高分</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-value">{{3 - dailyData.attempts}}</view>
+        <view class="stat-label">剩余次数</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-value">{{dailyData.consecutiveDays}}</view>
+        <view class="stat-label">连续天数</view>
+      </view>
+    </view>
+
+    <view class="status-section">
+      <view class="status-badge {{dailyData.completed ? 'completed' : ''}}">
+        {{dailyData.completed ? '✅ 今日已完成' : '🎯 等待挑战'}}
+      </view>
+    </view>
+
+    <view class="action-section">
+      <view 
+        class="btn btn-primary start-btn {{!dailyData.completed && dailyData.attempts < 3 ? '' : 'disabled'}}" 
+        bindtap="startDailyChallenge"
+      >
+        <text class="btn-text">开始今日挑战</text>
+        <text class="btn-icon">🚀</text>
+      </view>
+    </view>
+
+    <view class="leaderboard-section">
+      <view class="section-title">🏆 今日排行榜</view>
+      <view class="leaderboard-list">
+        <view wx:for="{{leaderboard}}" wx:key="rank" class="leaderboard-item">
+          <view class="rank">{{item.rank}}</view>
+          <view class="avatar">{{item.avatar}}</view>
+          <view class="info">
+            <view class="name">{{item.nickname}}</view>
+            <view class="score">{{item.score}}分</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{isPlaying}}" class="game-area">
+    <view class="game-header">
+      <view class="combo-display">
+        <text class="combo-label">连击</text>
+        <text class="combo-value">{{combo}}</text>
+      </view>
+      <view class="score-display">
+        <text class="score-label">分数</text>
+        <text class="score-value">{{score}}</text>
+      </view>
+      <view class="timer-display">
+        <text class="timer-icon">⏱️</text>
+        <text class="timer-value">{{remainingTime}}</text>
+      </view>
+    </view>
+
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{(currentIndex + 1) / questions.length * 100}}%"></view>
+    </view>
+    <view class="progress-text">{{currentIndex + 1}}/{{questions.length}}</view>
+
+    <view class="question-card">
+      <view class="question-title">{{currentQuestion.title}}</view>
+      <view class="options-list">
+        <view 
+          wx:for="{{currentQuestion.options}}" 
+          wx:key="index"
+          class="option-item {{selectedIndex === index ? (item.isCorrect ? 'correct' : 'wrong') : ''}}"
+          data-index="{{index}}"
+          bindtap="onOptionTap"
+        >
+          <view class="option-text">{{item.text}}</view>
+          <view wx:if="{{showResult && item.isCorrect}}" class="option-icon">✓</view>
+          <view wx:if="{{showResult && selectedIndex === index && !item.isCorrect}}" class="option-icon">✗</view>
+        </view>
+      </view>
+    </view>
+
+    <combo-effect wx:if="{{showCombo}}" combo="{{combo}}" />
+  </view>
+
+  <achievement-popup 
+    wx:if="{{showAchievement}}" 
+    achievement="{{newAchievement}}" 
+    visible="{{showAchievement}}"
+    bind:close="closeAchievement"
+  />
+</view>

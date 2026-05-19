@@ -1,0 +1,102 @@
+.quiz-page {
+  min-height: 100vh;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30rpx;
+}
+
+.progress-info {
+  flex: 1;
+  margin-right: 30rpx;
+}
+
+.progress-text {
+  font-size: 28rpx;
+  color: white;
+  margin-bottom: 15rpx;
+  display: block;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00f5ff 0%, #ff00ff 100%);
+  border-radius: 6rpx;
+  transition: width 0.3s ease;
+}
+
+.score-panel {
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20rpx;
+  padding: 25rpx;
+  margin-bottom: 30rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.2);
+}
+
+.score-item {
+  text-align: center;
+}
+
+.score-label {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8rpx;
+}
+
+.score-value {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: white;
+}
+
+.score-value.combo-active {
+  color: #f093fb;
+  animation: pulse 0.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.question-container {
+  margin-bottom: 30rpx;
+}
+
+.next-btn-container {
+  margin-top: 40rpx;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}

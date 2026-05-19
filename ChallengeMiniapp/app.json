@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/quiz/quiz",
+    "pages/result/result",
+    "pages/leaderboard/leaderboard",
+    "pages/daily/daily",
+    "pages/endless/endless",
+    "pages/achievements/achievements"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1a1a2e",
+    "navigationBarTitleText": "答题闯关",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#1a1a2e"
+  },
+  "usingComponents": {
+    "question-card": "/components/question-card/question-card",
+    "countdown": "/components/countdown/countdown",
+    "combo-effect": "/components/combo-effect/combo-effect",
+    "leaderboard-item": "/components/leaderboard/leaderboard"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

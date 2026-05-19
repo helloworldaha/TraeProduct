@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "combo-effect": "/components/combo-effect/combo-effect",
+    "achievement-popup": "/components/achievement-popup/achievement-popup"
+  },
+  "navigationBarTitleText": "无限挑战"
+}

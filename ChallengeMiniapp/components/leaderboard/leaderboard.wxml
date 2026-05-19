@@ -1,0 +1,11 @@
+<view class="leaderboard-item">
+  <view class="rank {{rankClass}}">{{rank}}</view>
+  <view class="player-info">
+    <view class="player-name">{{name}}</view>
+    <view class="player-stats">
+      <text>正确率 {{accuracy}}%</text>
+      <text>用时 {{time}}</text>
+    </view>
+  </view>
+  <view class="score">{{score}}</view>
+</view>

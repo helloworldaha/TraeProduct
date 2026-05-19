@@ -1,0 +1,75 @@
+<view class="page-container">
+  <view class="particles-bg">
+    <view wx:for="{{particles}}" wx:key="id" class="particle" style="left: {{item.left}}; top: {{item.top}}; animation-delay: {{item.delay}}s;"></view>
+  </view>
+
+  <view class="content">
+    <view class="header animate-fadeIn">
+      <view class="title-main animate-glow">答题闯关</view>
+      <view class="subtitle">挑战你的知识极限</view>
+    </view>
+
+    <view class="high-score-card animate-fadeIn" style="animation-delay: 0.1s;">
+      <view class="high-score-icon">🏆</view>
+      <view class="high-score-info">
+        <view class="high-score-label">历史最高分</view>
+        <view class="high-score-value">{{highScore}}</view>
+      </view>
+    </view>
+
+    <view class="mode-section animate-fadeIn" style="animation-delay: 0.2s;">
+      <view class="section-title">🎮 游戏模式</view>
+      <view class="mode-grid">
+        <view class="mode-card normal-mode" bindtap="startGame">
+          <view class="mode-icon">🎯</view>
+          <view class="mode-name">普通模式</view>
+          <view class="mode-desc">10道题，限时挑战</view>
+        </view>
+        <view class="mode-card daily-mode" bindtap="goToDaily">
+          <view class="mode-icon">📅</view>
+          <view class="mode-name">每日挑战</view>
+          <view class="mode-desc">每日更新，限定次数</view>
+        </view>
+        <view class="mode-card endless-mode" bindtap="goToEndless">
+          <view class="mode-icon">∞</view>
+          <view class="mode-name">无限挑战</view>
+          <view class="mode-desc">无限题库，难度递增</view>
+        </view>
+        <view class="mode-card achievement-mode" bindtap="goToAchievements">
+          <view class="mode-icon">🏅</view>
+          <view class="mode-name">成就墙</view>
+          <view class="mode-desc">收集徽章，解锁成就</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="btn-container animate-fadeIn" style="animation-delay: 0.4s;">
+      <view class="btn btn-secondary leaderboard-btn" bindtap="goToLeaderboard">
+        <text class="btn-text">排行榜</text>
+        <text class="btn-icon">📊</text>
+      </view>
+      
+      <view class="btn btn-secondary share-btn" bindtap="showShareGuide">
+        <text class="btn-text">分享游戏</text>
+        <text class="btn-icon">🔗</text>
+      </view>
+    </view>
+
+    <view class="features animate-fadeIn" style="animation-delay: 0.5s;">
+      <view class="feature-item">
+        <view class="feature-icon">⏱️</view>
+        <view class="feature-text">限时挑战</view>
+      </view>
+      <view class="feature-item">
+        <view class="feature-icon">🔥</view>
+        <view class="feature-text">连击加分</view>
+      </view>
+      <view class="feature-item">
+        <view class="feature-icon">💯</view>
+        <view class="feature-text">等级系统</view>
+      </view>
+    </view>
+  </view>
+
+  <share-guide visible="{{showShareGuide}}" bind:close="hideShareGuide" />
+</view>

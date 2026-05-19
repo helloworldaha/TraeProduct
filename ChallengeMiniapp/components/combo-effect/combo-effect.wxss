@@ -1,0 +1,64 @@
+.combo-container {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+@keyframes comboAnim {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+.combo-text {
+  display: flex;
+  align-items: baseline;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 20rpx 40rpx;
+  border-radius: 50rpx;
+  box-shadow: 0 10rpx 40rpx rgba(240, 147, 251, 0.5);
+}
+
+.combo-number {
+  font-size: 80rpx;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 20rpx rgba(255, 255, 255, 0.8);
+}
+
+.combo-label {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: white;
+  margin-left: 10rpx;
+}
+
+.combo-fire {
+  font-size: 60rpx;
+  margin-top: -20rpx;
+  animation: fire 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes fire {
+  from {
+    transform: scale(1) rotate(-10deg);
+  }
+  to {
+    transform: scale(1.2) rotate(10deg);
+  }
+}

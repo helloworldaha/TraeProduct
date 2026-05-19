@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "挑战结果",
+  "usingComponents": {
+    "share-guide": "/components/share-guide/share-guide",
+    "achievement-popup": "/components/achievement-popup/achievement-popup"
+  }
+}

@@ -1,0 +1,23 @@
+<view class="share-guide-mask" wx:if="{{visible}}" bindtap="onMaskTap">
+  <view class="share-guide-content" catchtap="stopPropagation">
+    <view class="arrow-animation">
+      <view class="arrow"></view>
+      <view class="arrow"></view>
+      <view class="arrow"></view>
+    </view>
+    <view class="share-tip">
+      <view class="tip-icon">👆</view>
+      <view class="tip-text">点击右上角分享给好友</view>
+    </view>
+    <view class="share-options">
+      <view class="share-option">
+        <view class="option-icon">💬</view>
+        <view class="option-text">转发好友</view>
+      </view>
+      <view class="share-option">
+        <view class="option-icon">⭕</view>
+        <view class="option-text">朋友圈</view>
+      </view>
+    </view>
+  </view>
+</view>

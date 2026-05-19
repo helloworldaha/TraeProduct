@@ -1,0 +1,7 @@
+<view wx:if="{{show}}" class="combo-container" style="animation: comboAnim 0.5s ease-out forwards;">
+  <view class="combo-text">
+    <view class="combo-number">{{combo}}</view>
+    <view class="combo-label">连击!</view>
+  </view>
+  <view class="combo-fire">🔥</view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "答题闯关",
+  "usingComponents": {
+    "share-guide": "/components/share-guide/share-guide"
+  }
+}

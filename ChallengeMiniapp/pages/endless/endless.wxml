@@ -1,0 +1,106 @@
+<view class="page-container">
+  <view wx:if="{{!isPlaying}}" class="start-screen">
+    <view class="endless-badge">
+      <text class="badge-icon">∞</text>
+      <text class="badge-text">ENDLESS</text>
+    </view>
+    
+    <view class="game-desc">
+      题目无限随机生成，难度逐渐递增，挑战你的极限！
+    </view>
+
+    <view wx:if="{{bestRecord}}" class="best-record">
+      <view class="record-title">🏆 最佳记录</view>
+      <view class="record-stats">
+        <view class="stat">
+          <view class="value">{{bestRecord.score}}</view>
+          <view class="label">最高分</view>
+        </view>
+        <view class="stat">
+          <view class="value">{{bestRecord.maxCombo}}</view>
+          <view class="label">最大连击</view>
+        </view>
+        <view class="stat">
+          <view class="value">{{formatSurvivalTime(bestRecord.survivalTime)}}</view>
+          <view class="label">生存时间</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="start-btn" bindtap="startEndlessMode">
+      <text class="btn-text">开始挑战</text>
+      <text class="btn-icon">🚀</text>
+    </view>
+
+    <view class="rules">
+      <view class="rule-item">⚠️ 答错3次游戏结束</view>
+      <view class="rule-item">⏱️ 答题越快分数越高</view>
+      <view class="rule-item">🔥 连击可获得额外加分</view>
+    </view>
+  </view>
+
+  <view wx:if="{{isPlaying && gameState}}" class="game-screen">
+    <view class="game-header">
+      <view class="header-left">
+        <view class="difficulty-badge" style="background: {{getDifficultyColor(difficulty.level)}}">
+          Lv.{{difficulty.level}} {{difficulty.name}}
+        </view>
+      </view>
+      <view class="header-right">
+        <view class="wrong-indicator">
+          <text wx:for="{{3}}" wx:key="index" class="heart {{index < gameState.wrongCount ? 'lost' : ''}}">❤</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="main-stats">
+      <view class="stat-card">
+        <view class="stat-value">{{gameState.score}}</view>
+        <view class="stat-label">分数</view>
+      </view>
+      <view class="stat-card combo-card">
+        <view class="stat-value">{{gameState.combo}}</view>
+        <view class="stat-label">连击</view>
+      </view>
+      <view class="stat-card">
+        <view class="stat-value">{{survivalTime}}</view>
+        <view class="stat-label">时间</view>
+      </view>
+    </view>
+
+    <view class="timer-ring">
+      <view class="timer-progress" style="transform: rotate({{(1 - remainingTime / difficulty.timePerQuestion) * 360}}deg)"></view>
+      <view class="timer-center">
+        <view class="timer-value">{{remainingTime}}</view>
+      </view>
+    </view>
+
+    <view class="question-area">
+      <view class="question-number">#{{gameState.currentIndex + 1}}</view>
+      <view class="question-title">{{questions[gameState.currentIndex].title}}</view>
+    </view>
+
+    <view class="options-list">
+      <view 
+        wx:for="{{questions[gameState.currentIndex].options}}" 
+        wx:key="index"
+        class="option-item {{gameState.selectedIndex === index ? (item.isCorrect ? 'correct' : 'wrong') : ''}}"
+        data-index="{{index}}"
+        bindtap="onOptionTap"
+      >
+        <view class="option-text">{{item.text}}</view>
+      </view>
+    </view>
+
+    <view class="exit-btn" bindtap="exitGame">退出</view>
+
+    <combo-effect wx:if="{{gameState.combo > 1 && !gameState.showResult}}" combo="{{gameState.combo}}" />
+  </view>
+
+  <achievement-popup 
+    wx:if="{{showAchievement}}" 
+    achievement="{{newAchievement}}" 
+    visible="{{showAchievement}}"
+    bind:close="closeAchievement"
+  />
+</view>

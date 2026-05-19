@@ -1,0 +1,24 @@
+<view class="question-card">
+  <view class="question-header">
+    <view class="question-type">{{typeIcon}} {{typeText}}</view>
+    <view class="question-number">{{questionNumber}}</view>
+  </view>
+  
+  <view class="question-title">{{question ? question.title : ''}}</view>
+  
+  <view class="options-list" wx:if="{{question && question.options}}">
+    <view 
+      wx:for="{{question.options}}" 
+      wx:key="index"
+      class="option-item {{optionClass[index]}}"
+      data-index="{{index}}"
+      bindtap="onOptionTap"
+      style="animation-delay: {{index * 0.1 + 0.3}}s"
+    >
+      <view class="option-label">{{optionLabels[index]}}</view>
+      <view class="option-text">{{item.text}}</view>
+      <view wx:if="{{showResult && item.isCorrect}}" class="option-icon correct">✓</view>
+      <view wx:if="{{showResult && selectedIndex === index && !item.isCorrect}}" class="option-icon wrong">✗</view>
+    </view>
+  </view>
+</view>

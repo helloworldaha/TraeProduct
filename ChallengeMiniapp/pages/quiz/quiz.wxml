@@ -1,0 +1,46 @@
+<view class="quiz-page">
+  <combo-effect show="{{showCombo}}" combo="{{combo}}" />
+  
+  <view class="quiz-header">
+    <view class="progress-info">
+      <text class="progress-text">第 {{currentIndex + 1}} / {{totalQuestions}} 题</text>
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: {{progressPercent}}%"></view>
+      </view>
+    </view>
+    <countdown duration="{{questionTime}}" remaining="{{remainingTime}}" />
+  </view>
+
+  <view class="score-panel">
+    <view class="score-item">
+      <view class="score-label">得分</view>
+      <view class="score-value">{{score}}</view>
+    </view>
+    <view class="score-item">
+      <view class="score-label">连击</view>
+      <view class="score-value {{combo > 0 ? 'combo-active' : ''}}">x{{combo}}</view>
+    </view>
+    <view class="score-item">
+      <view class="score-label">等级</view>
+      <view class="score-value">{{level.name}}</view>
+    </view>
+  </view>
+
+  <view class="question-container">
+    <question-card 
+      wx:if="{{currentQuestion}}"
+      question="{{currentQuestion}}"
+      show-result="{{showResult}}"
+      selected-index="{{selectedIndex}}"
+      current-index="{{currentIndex + 1}}"
+      total-count="{{totalQuestions}}"
+      bind:select="onOptionSelect"
+    />
+  </view>
+
+  <view wx:if="{{showResult}}" class="next-btn-container animate-fadeIn">
+    <view class="btn btn-primary" bindtap="nextQuestion">
+      {{isLastQuestion ? '查看结果' : '下一题'}}
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+<view class="countdown-container">
+  <view class="progress-ring">
+    <canvas canvas-id="progressCanvas" class="progress-canvas"></canvas>
+    <view class="countdown-text {{urgentClass}}">{{displayTime}}</view>
+  </view>
+  <view class="countdown-label">剩余时间</view>
+</view>

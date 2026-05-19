@@ -1,0 +1,100 @@
+.achievement-popup-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.achievement-popup-content {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 30rpx;
+  width: 500rpx;
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.popup-header {
+  margin-bottom: 20rpx;
+}
+
+.badge-icon {
+  font-size: 100rpx;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.popup-body {
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.unlock-text {
+  font-size: 32rpx;
+  color: #ffd700;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+}
+
+.achievement-title {
+  font-size: 36rpx;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.achievement-desc {
+  font-size: 26rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.popup-footer {
+  width: 100%;
+}
+
+.close-btn {
+  background: #ffd700;
+  color: #333;
+  border-radius: 50rpx;
+  padding: 20rpx 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

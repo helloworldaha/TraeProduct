@@ -1,0 +1,34 @@
+<view class="page-container">
+  <view class="progress-section">
+    <view class="progress-header">
+      <view class="progress-title">🏆 成就进度</view>
+      <view class="progress-count">{{unlockedCount}}/{{totalCount}}</view>
+    </view>
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{progressPercent}}%"></view>
+    </view>
+  </view>
+
+  <view class="achievements-grid">
+    <view 
+      wx:for="{{achievements}}" 
+      wx:key="id"
+      class="achievement-card {{item.unlocked ? 'unlocked' : 'locked'}}"
+      data-id="{{item.id}}"
+      bindtap="onAchievementTap"
+    >
+      <view class="achievement-icon">{{item.icon}}</view>
+      <view class="achievement-title">{{item.title}}</view>
+      <view class="achievement-desc">{{item.desc}}</view>
+      <view wx:if="{{!item.unlocked}}" class="achievement-progress">
+        <view class="progress-text">{{item.progress}}/{{item.target}}</view>
+        <view class="mini-progress-bar">
+          <view class="mini-progress-fill" style="width: {{item.progress / item.target * 100}}%"></view>
+        </view>
+      </view>
+      <view wx:if="{{item.unlocked}}" class="achievement-date">
+        {{formatDate(item.unlockedAt)}}
+      </view>
+    </view>
+  </view>
+</view>

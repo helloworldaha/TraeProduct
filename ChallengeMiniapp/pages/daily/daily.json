@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "question-card": "/components/question-card/question-card",
+    "countdown": "/components/countdown/countdown",
+    "combo-effect": "/components/combo-effect/combo-effect",
+    "achievement-popup": "/components/achievement-popup/achievement-popup"
+  },
+  "navigationBarTitleText": "每日挑战"
+}

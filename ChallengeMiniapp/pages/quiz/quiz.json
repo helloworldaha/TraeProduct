@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "答题挑战",
+  "usingComponents": {
+    "question-card": "../../components/question-card/question-card",
+    "countdown": "../../components/countdown/countdown",
+    "combo-effect": "../../components/combo-effect/combo-effect"
+  }
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>AI 性格测试 | 探索真实的自己</title>
+  <meta name="description" content="基于MBTI理论的AI性格测试，20道题深入分析你的性格特质、职业倾向、恋爱风格">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="particleCanvas"></canvas>
+  
+  <div id="app" class="app">
+    <div id="homePage" class="page active">
+      <div class="home-content">
+        <div class="banner-card">
+          <span class="banner-tag">✨ 超准</span>
+          <span class="banner-text">已有 <span id="testCount">128,643</span> 人测试</span>
+        </div>
+        
+        <h1 class="main-title glow-text">
+          <span class="title-line">AI 性格测试</span>
+          <span class="title-sub">探索真实的自己</span>
+        </h1>
+        
+        <p class="intro-text">
+          基于荣格心理学理论，通过20道精选题目<br>
+          深度分析你的性格特质，解锁专属人生报告
+        </p>
+        
+        <div class="feature-cards">
+          <div class="feature-card float-card">
+            <div class="feature-icon">🎯</div>
+            <div class="feature-title">精准分析</div>
+            <div class="feature-desc">16型人格分类</div>
+          </div>
+          <div class="feature-card float-card" style="animation-delay: 0.1s">
+            <div class="feature-icon">💼</div>
+            <div class="feature-title">职业推荐</div>
+            <div class="feature-desc">适配工作方向</div>
+          </div>
+          <div class="feature-card float-card" style="animation-delay: 0.2s">
+            <div class="feature-icon">💝</div>
+            <div class="feature-title">恋爱风格</div>
+            <div class="feature-desc">情感模式解析</div>
+          </div>
+        </div>
+        
+        <button id="startBtn" class="glow-btn start-btn">
+          <span class="btn-text">开始测试</span>
+          <span class="btn-shine"></span>
+        </button>
+        
+        <div class="share-banner">
+          <div class="share-content">
+            <span class="share-icon">📤</span>
+            <span class="share-text">分享给好友，一起探索性格奥秘</span>
+          </div>
+          <button id="shareBtn" class="share-btn">
+            <span>立即分享</span>
+          </button>
+        </div>
+        
+        <div class="mode-buttons">
+          <button id="singleModeBtn" class="mode-btn active">
+            <span class="mode-icon">🎯</span>
+            <span class="mode-text">单人测试</span>
+          </button>
+          <button id="coupleModeBtn" class="mode-btn">
+            <span class="mode-icon">💕</span>
+            <span class="mode-text">情侣匹配</span>
+          </button>
+        </div>
+        
+        <p class="tip-text">⏱️ 预计用时 3-5 分钟</p>
+      </div>
+    </div>
+    
+    <div id="testPage" class="page">
+      <div class="progress-container">
+        <div class="progress-header">
+          <span class="progress-text">第 <span id="currentNum">1</span>/20 题</span>
+          <span class="progress-percent" id="progressPercent">5%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+      
+      <div class="question-container">
+        <div class="question-card" id="questionCard">
+          <h2 class="question-title" id="questionTitle"></h2>
+          <p class="question-desc" id="questionDesc"></p>
+          
+          <div class="options-list" id="optionsList"></div>
+        </div>
+      </div>
+      
+      <div class="nav-buttons">
+        <button id="prevBtn" class="nav-btn prev-btn" disabled>
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+          上一题
+        </button>
+      </div>
+    </div>
+    
+    <div id="resultPage" class="page">
+      <div class="result-container" id="resultContainer"></div>
+      
+      <div class="result-actions">
+        <button id="zodiacEntryBtn" class="action-btn zodiac-entry-btn">
+          <span>🌟 加入星座分析</span>
+        </button>
+        <button id="posterBtn" class="action-btn poster-btn">
+          <span>🎨 生成海报</span>
+        </button>
+        <button id="retryBtn" class="action-btn retry-btn">
+          <span>🔄 重新测试</span>
+        </button>
+        <button id="homeBtn" class="action-btn home-btn">
+          <span>🏠 返回首页</span>
+        </button>
+      </div>
+    </div>
+    
+    <div id="zodiacSelectPage" class="page">
+      <div class="zodiac-container">
+        <div class="zodiac-header">
+          <h2 class="zodiac-title">🌟 选择你的星座</h2>
+          <p class="zodiac-subtitle">结合性格测试，解锁更深度的人格分析</p>
+        </div>
+        <div class="zodiac-grid" id="zodiacGrid"></div>
+      </div>
+    </div>
+    
+    <div id="zodiacResultPage" class="page">
+      <div class="zodiac-result-container" id="zodiacResultContainer"></div>
+      
+      <div class="result-actions">
+        <button id="zodiacPosterBtn" class="action-btn poster-btn">
+          <span>🎨 生成星座海报</span>
+        </button>
+        <button id="zodiacRetryBtn" class="action-btn retry-btn">
+          <span>🔄 重新选择星座</span>
+        </button>
+        <button id="zodiacHomeBtn" class="action-btn home-btn">
+          <span>🏠 返回首页</span>
+        </button>
+      </div>
+    </div>
+    
+    <div id="coupleModePage" class="page">
+      <div class="couple-container">
+        <div class="couple-header">
+          <h2 class="couple-title">💕 情侣匹配测试</h2>
+          <p class="couple-subtitle">双人测试，探索你们的默契指数</p>
+        </div>
+        
+        <div class="couple-steps">
+          <div class="couple-step active" id="step1">
+            <div class="step-number">1</div>
+            <div class="step-label">用户A测试</div>
+          </div>
+          <div class="couple-step" id="step2">
+            <div class="step-number">2</div>
+            <div class="step-label">用户B测试</div>
+          </div>
+          <div class="couple-step" id="step3">
+            <div class="step-number">3</div>
+            <div class="step-label">查看结果</div>
+          </div>
+        </div>
+        
+        <div class="couple-card">
+          <div class="couple-avatar" id="currentUserAvatar">👤</div>
+          <div class="couple-user-info">
+            <div class="couple-user-name" id="currentUserName">用户 A</div>
+            <p class="couple-user-desc">请完成性格测试</p>
+          </div>
+        </div>
+        
+        <button id="startCoupleTestBtn" class="glow-btn start-btn">
+          <span class="btn-text">开始测试</span>
+          <span class="btn-shine"></span>
+        </button>
+      </div>
+    </div>
+    
+    <div id="coupleResultPage" class="page">
+      <div class="couple-result-container" id="coupleResultContainer"></div>
+      
+      <div class="result-actions">
+        <button id="coupleZodiacBtn" class="action-btn zodiac-entry-btn">
+          <span>🌟 加入星座分析</span>
+        </button>
+        <button id="couplePosterBtn" class="action-btn poster-btn">
+          <span>🎨 生成情侣海报</span>
+        </button>
+        <button id="coupleRetryBtn" class="action-btn retry-btn">
+          <span>🔄 重新匹配</span>
+        </button>
+        <button id="coupleHomeBtn" class="action-btn home-btn">
+          <span>🏠 返回首页</span>
+        </button>
+      </div>
+    </div>
+    
+    <div id="posterModal" class="modal">
+      <div class="modal-content">
+        <div class="poster-container">
+          <canvas id="posterCanvas"></canvas>
+        </div>
+        <div class="modal-actions">
+          <button id="savePosterBtn" class="modal-btn save-btn">保存图片</button>
+          <button id="closeModalBtn" class="modal-btn close-btn">关闭</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="confetti-container" id="confettiContainer"></div>
+  <div class="heart-particles-container" id="heartParticlesContainer"></div>
+  
+  <script src="questions.js"></script>
+  <script src="results.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+.page-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 30rpx;
+}
+
+.progress-section {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.progress-title {
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: bold;
+}
+
+.progress-count {
+  font-size: 28rpx;
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.progress-bar {
+  height: 20rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffd700, #ffed4e);
+  border-radius: 10rpx;
+  transition: width 0.5s ease;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20rpx;
+}
+
+.achievement-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20rpx;
+  padding: 30rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.achievement-card.unlocked {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 193, 7, 0.2) 100%);
+  border: 2rpx solid rgba(255, 215, 0, 0.5);
+}
+
+.achievement-card.locked {
+  opacity: 0.6;
+}
+
+.achievement-icon {
+  font-size: 60rpx;
+  margin-bottom: 15rpx;
+}
+
+.achievement-card.unlocked .achievement-icon {
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5rpx rgba(255, 215, 0, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 15rpx rgba(255, 215, 0, 0.8));
+  }
+}
+
+.achievement-title {
+  font-size: 26rpx;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.achievement-desc {
+  font-size: 22rpx;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 15rpx;
+  line-height: 1.4;
+}
+
+.achievement-progress {
+  width: 100%;
+}
+
+.progress-text {
+  font-size: 20rpx;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 8rpx;
+}
+
+.mini-progress-bar {
+  height: 8rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4rpx;
+  overflow: hidden;
+}
+
+.mini-progress-fill {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4rpx;
+}
+
+.achievement-date {
+  font-size: 20rpx;
+  color: rgba(255, 215, 0, 0.7);
+  margin-top: 10rpx;
+}

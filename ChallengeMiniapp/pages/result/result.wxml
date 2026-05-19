@@ -1,0 +1,62 @@
+<view class="result-page">
+  <view class="result-header animate-fadeIn">
+    <view class="result-icon">{{evaluation.emoji}}</view>
+    <view class="result-title">挑战完成！</view>
+    <view class="result-evaluation" style="color: {{evaluation.color}}">{{evaluation.text}}</view>
+    <view class="mode-badge" wx:if="{{mode !== 'normal'}}">{{mode === 'daily' ? '📅 每日挑战' : '∞ 无限模式'}}</view>
+  </view>
+
+  <view class="score-card animate-fadeIn" style="animation-delay: 0.2s;">
+    <view class="final-score">
+      <view class="score-number">{{score}}</view>
+      <view class="score-label">最终得分</view>
+    </view>
+  </view>
+
+  <view class="stats-grid animate-fadeIn" style="animation-delay: 0.3s;">
+    <view class="stat-item">
+      <view class="stat-value">{{correct}}/{{total}}</view>
+      <view class="stat-label">正确率</view>
+    </view>
+    <view class="stat-item" wx:if="{{total > 0}}">
+      <view class="stat-value">{{accuracy}}%</view>
+      <view class="stat-label">准确率</view>
+    </view>
+    <view class="stat-item">
+      <view class="stat-value">{{usedTime}}</view>
+      <view class="stat-label">用时</view>
+    </view>
+    <view class="stat-item" wx:if="{{maxCombo > 0}}">
+      <view class="stat-value">{{maxCombo}}</view>
+      <view class="stat-label">最高连击</view>
+    </view>
+  </view>
+
+  <view class="new-record animate-fadeIn" wx:if="{{isNewRecord}}" style="animation-delay: 0.4s;">
+    <view class="record-icon">🎉</view>
+    <view class="record-text">新纪录！</view>
+  </view>
+
+  <view class="btn-group animate-fadeIn" style="animation-delay: 0.5s;">
+    <view class="btn btn-primary" bindtap="playAgain">
+      <text>再来一次</text>
+    </view>
+    <view class="btn btn-secondary" bindtap="goToHome">
+      <text>返回首页</text>
+    </view>
+  </view>
+
+  <view class="share-btn animate-fadeIn" style="animation-delay: 0.6s;" bindtap="showShareGuide">
+    <text class="share-icon">🔗</text>
+    <text class="share-text">分享成绩给好友</text>
+  </view>
+
+  <share-guide visible="{{showShareGuide}}" bind:close="hideShareGuide" />
+  
+  <achievement-popup 
+    wx:if="{{showAchievement}}" 
+    achievement="{{newAchievement}}" 
+    visible="{{showAchievement}}"
+    bind:close="closeAchievement"
+  />
+</view>

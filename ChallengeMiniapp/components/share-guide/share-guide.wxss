@@ -1,0 +1,120 @@
+.share-guide-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20rpx;
+  animation: fadeIn 0.3s ease;
+}
+
+.share-guide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40rpx;
+  margin-right: 20rpx;
+}
+
+.arrow-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 20rpx;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  border-bottom: 30rpx solid #fff;
+  margin-bottom: 10rpx;
+  animation: arrowBounce 1s infinite;
+}
+
+.arrow:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.arrow:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10rpx);
+  }
+}
+
+.share-tip {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx 40rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.tip-icon {
+  font-size: 40rpx;
+  margin-right: 15rpx;
+}
+
+.tip-text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.share-options {
+  display: flex;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.share-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx 30rpx;
+}
+
+.option-icon {
+  font-size: 50rpx;
+  margin-bottom: 10rpx;
+}
+
+.option-text {
+  font-size: 24rpx;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

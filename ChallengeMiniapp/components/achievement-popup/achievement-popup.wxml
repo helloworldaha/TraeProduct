@@ -1,0 +1,15 @@
+<view class="achievement-popup-mask" wx:if="{{visible && achievement}}" bindtap="onClose">
+  <view class="achievement-popup-content" catchtap="stopPropagation">
+    <view class="popup-header">
+      <view class="badge-icon">{{achievement.icon}}</view>
+    </view>
+    <view class="popup-body">
+      <view class="unlock-text">🎉 成就解锁！</view>
+      <view class="achievement-title">{{achievement.title}}</view>
+      <view class="achievement-desc">{{achievement.desc}}</view>
+    </view>
+    <view class="popup-footer">
+      <view class="close-btn" bindtap="onClose">太棒了！</view>
+    </view>
+  </view>
+</view>
